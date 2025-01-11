@@ -1,0 +1,27 @@
+
+<article>
+        <img class="listing-photo" [src]="housingLocation?.photo" alt="View of housing Location"/>
+        <h2 class="listing-heading">{{housingLocation?.name}}</h2>
+        <p class="listing-location">{{housingLocation?.city}}, {{housingLocation?.state}}</p>
+    <section class="listing-features">
+        <h2 class="section-heading">About this housing location</h2>
+        <ul>
+            <li>Units available: {{housingLocation?.availableUnits}}</li>
+            <li>Does this location have Wi-Fi? {{housingLocation?.wifi}}</li>
+            <li>Does this location have laundry? {{housingLocation?.laundry}}</li>
+        </ul>
+
+    </section>
+    <section class="listing-apply">
+        <h2 class="section-heading">Apply now to live here!</h2>
+        <form [formGroup]="applyForm" (submit)="submitApplication()" >
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" formControlName="firstName">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" formControlName="lastName">
+            <label for="email-id">Email ID</label>
+            <input type="text" id="email-id" formControlName="emailId">
+            <button class="primary" type="submit">Apply Now</button>
+        </form>
+    </section>
+</article>
